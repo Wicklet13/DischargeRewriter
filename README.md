@@ -1,1 +1,1 @@
-"# DischargeRewriter" 
+# DischargeRewriter

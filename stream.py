@@ -19,8 +19,6 @@ question_prompt = st.text_area("Enter Discharge Notes:", height=300)
 if st.button("Submit"):
     res = generate_response(question_prompt, explain_terms, reading_level)
     
-    # st.write(res)
-
     output = st.empty()
 
     current_text = ""
@@ -28,5 +26,3 @@ if st.button("Submit"):
         current_text += char
         output.markdown(current_text + "▌")  # ▌ cursor effect
         time.sleep(0.01)
-
-    st.write(res)
