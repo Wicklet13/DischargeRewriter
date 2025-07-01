@@ -9,7 +9,9 @@ st.title("LLM Chatbot")
 st.write("")
 
 explain_terms = st.checkbox("Explain medical terms", value=True)
-reading_level = st.selectbox("Comprehension Level:", ["5th grade", "6th grade", "8th grade", "Young Adult"])
+reading_level = st.selectbox("Comprehension Level:", ["5th grader", "6th grader", "8th grader", "Young Adult", "Doctor"])
+word_count = st.number_input("Word Count:", value=500)
+
 
 st.write("")
 
@@ -17,7 +19,7 @@ st.write("")
 question_prompt = st.text_area("Enter Discharge Notes:", height=300)
 
 if st.button("Submit"):
-    res = generate_response(question_prompt, explain_terms, reading_level)
+    res = generate_response(question_prompt, explain_terms, word_count, reading_level)
     
     output = st.empty()
 

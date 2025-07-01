@@ -5,12 +5,14 @@ df = pd.read_csv("refined.csv")
 
 ollama_model = "phi3:mini"
 
-def generate_response(text, explain, level="6th grade"):
+# word counts
+
+def generate_response(text, explain, word_count, level="6th grade"):
 
     explain_text = "Simply explain all medical terminology" if explain else "Avoid all medical terminology"
 
     prompt = f"""
-    Rewrite the medical discharge instructions below into plain language a {level}r can understand.
+    Rewrite the medical discharge instructions below into plain language a {level} could understand.
 
     Strict rules:
     - Use short sentences. Maximum 15 words per sentence.
@@ -19,9 +21,9 @@ def generate_response(text, explain, level="6th grade"):
     - Do NOT add extra information, stories, or feelings.
     - Do NOT summarize or restate.
     - Use a kind, friendly tone.
-    - Output only the rewritten instructions, starting with "Rewrite:".
+    - Output only the rewritten instructions, without "Rewrite:".
     - Do not add introductions, conclusions, or extra commentary.
-    - Limit output to 100 words maximum.
+    - Limit output to {word_count} words maximum.
     - Do not use numbered or bulleted lists.
     - Each sentence should be separated by a line break.
 
@@ -59,6 +61,3 @@ def generate_response(text, explain, level="6th grade"):
     )
 
     return model_response.message.content
-
-# test_res = generate_response(df.iloc[0]["note"])
-# print(test_res)
