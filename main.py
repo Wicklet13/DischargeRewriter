@@ -5,8 +5,6 @@ df = pd.read_csv("refined.csv")
 
 ollama_model = "phi3:mini"
 
-# word counts
-
 def generate_response(text, explain, word_count, level="6th grade"):
 
     explain_text = "Simply explain all medical terminology" if explain else "Avoid all medical terminology"

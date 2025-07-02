@@ -4,17 +4,15 @@ import time
 
 st.set_page_config(layout="wide")
 
-st.title("LLM Chatbot")
+st.title("")
 
 st.write("")
 
-explain_terms = st.checkbox("Explain medical terms", value=True)
 reading_level = st.selectbox("Comprehension Level:", ["5th grader", "6th grader", "8th grader", "Young Adult", "Doctor"])
 word_count = st.number_input("Word Count:", value=500)
-
+explain_terms = st.checkbox("Explain medical terms", value=True)
 
 st.write("")
-
 
 question_prompt = st.text_area("Enter Discharge Notes:", height=300)
 
