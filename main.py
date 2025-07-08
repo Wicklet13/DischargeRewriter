@@ -18,7 +18,7 @@ def generate_response(text, explain, word_count, level="6th grade"):
     - Use a kind, friendly tone.
     - Output only the rewritten instructions, without "Rewrite:".
     - Do not add introductions, conclusions, or extra commentary.
-    - Limit output to {word_count} words maximum.
+    - Have output be exactly, or around, {word_count} words.
     - Do not use numbered or bulleted lists.
     - Each sentence should be separated by a line break.
 
