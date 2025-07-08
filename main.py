@@ -1,7 +1,4 @@
-import pandas as pd
 import ollama
-
-df = pd.read_csv("refined.csv")
 
 ollama_model = "phi3:mini"
 
