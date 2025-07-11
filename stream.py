@@ -1,10 +1,10 @@
-from main import generate_response
+from main_groq import generate_response
 import streamlit as st
 import time
 
 st.set_page_config(layout="wide")
 
-st.title("")
+st.title("Discharge Summary Rewriter")
 
 st.write("")
 
