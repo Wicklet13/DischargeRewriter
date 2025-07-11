@@ -1,4 +1,4 @@
-from main_groq import generate_response
+from main import generate_response
 import streamlit as st
 import time
 
